@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dictionary app</title>
+    <title>Wiktionary | Find any word</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -13,37 +13,66 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="index.html">
-                <h2>Dictionary</h2>
+                <h2 class="mx-3">Wiktionary</h2>
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+            <!-- <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> -->
+            <!-- <span class="navbar-toggler-icon"></span> -->
           </button>
 
         </div>
     </nav>
 
-    <section class="my-5 container">
+    <section class="my-5 container ">
         <h2>Find any English Word that exist in the world :)</h2>
-        <div class="form__wrap">
+        <div class="form__wrap d-flex flex-row align-items-center justify-content-center">
             <div class="input__wrap">
-                <input type="text" placeholder="Type a word" id="input">
-                <button id="search">Search</button>
+                <input type="text" placeholder="Enter an English word" id="input">
+                
             </div>
+            <button id="search">SEARCH</button>
         </div>
     </section>
     <section class="data container">
-        <h3>Our definition is:</h3>
+        <h3 id="our">Our definition is:</h3>
         <div class="didYouMean my-2"></div>
         <div class="not_found"></div>
         <span class="loading">Loading...</span>
         <p class="def">
         </p>
         <div class="audioBox">
+        </div>
+    </section>
+    <section class="container my-3 d-flex flex-column align-items-center justify-content-center" >
+        <div id="day" class="d-flex flex-column align-items-center justify-content-center">
+        <h2 style="font-weight: bold;">Learn the word of the day!</h2>
+        
+        <button id="word" ><span style="color: black;">LEARN</span></button>
+        <span id="display"></span>
+
+        <!-- <div class="card-box" class="div2">
+           <div class="content-card">
+               <div class="container d-flex flex-column align-items-center justify-content-center">
+                   <div class="my-3"><h3>Word of the day : </h3><span class="date"></span></div>
+                    <span id="display"></span>
+               </div>
+           </div> 
+        </div> -->
+        
+    </div>
+    </section>
+
+    <section class="container my-3 d-flex flex-column align-items-center justify-content-center">
+        <div>
+            <h3 id="suggest_h3">Did you mean ?</h3>
+            
+        </div>
+        <div id="suggest_box">
 
         </div>
-
-
     </section>
+
+
+
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
     <script src="app.js"></script>
