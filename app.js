@@ -9,22 +9,28 @@ let suggestion = document.querySelector(".didYouMean");
 let wordofday = document.getElementById("word")
 let suggest_box = document.getElementById("suggest_box")
 let date =document.getElementById("date")
+
+
 search.addEventListener("click", function clicked(e) {
     e.preventDefault();
-    document.getElementById("our").style.display="block";
+    
     audioBox.innerHTML = '';
     notFound.innerHTML = '';
     suggestion.innerHTML = '';
     defBox.innerText = '';
-    load_div.style.display = "block";
-
-    setTimeout(() => {}, 3000);
 
     let word = inp.value;
     if (word === '') {
         window.alert("Word Required");
         return;
     }
+    load_div.style.display = "block";
+
+    document.getElementById("our").style.display="block";
+    setTimeout(() => {}, 3000);
+
+    
+   
 
     getData(word);
 });
