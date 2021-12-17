@@ -273,15 +273,12 @@ button.icon,
 [role=button].icon {
   width: 50px;
 }
-/* button.icon svg,
-[role=button].icon svg {
-  margin-top: 3px;
-  width: 30px;
-  height: 30px;
-} */
+
 
 #search{
-  margin-top: 1.2rem;
-  margin-left: 40px;
+  margin-top: 3.2rem;
+  /* margin-left: 40px; */
   font-size: 20px;
 }
+
+
