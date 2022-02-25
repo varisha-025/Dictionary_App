@@ -29,9 +29,6 @@ search.addEventListener("click", function clicked(e) {
     document.getElementById("our").style.display="block";
     setTimeout(() => {}, 3000);
 
-    
-   
-
     getData(word);
 });
 
@@ -41,11 +38,31 @@ function suggest(data) {
     document.getElementById("day").style.display="none";
     
     document.getElementById("suggest_h3").style.display="block";
-    // suggestion.appendChild(suggest_h1)
+    console.log(data)
+    let fin = data.length;
+    if (data.length%3!=0){
 
-    let html = `<div class="d-flex flex-column bd-highlight mb-3">`;
+        fin -= data.length%3
+    }
+    let html=""
+    html += `<div class="row my-3">`;
+    let count=1;
+    let another=0;
     for (key in data) {
-        html += `<div class="p-2 bd-highlight">${data[key]}</div>`
+        if (another==fin){
+            break;
+        }
+        if (data[key]=="-" || data[key].length==0){
+            continue;
+        }
+        html += `<div class="col-lg mx-4">${data[key]}</div>`
+        if (count==3){
+            html+=`</div>`
+            html+=`<div class="row my-3">`
+            count=0;
+        }
+        count++;
+        another++;
     }
     html+=`</div>`
     // console.log(html)
@@ -67,6 +84,8 @@ async function getData(word) {
     // if response is suggestion
     if (typeof data[0] === 'string') {
         suggest(data);
+        
+        return;
     }
     // if response is not found
     if (!(data.length)) {
